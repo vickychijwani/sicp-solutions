@@ -1,0 +1,10 @@
+(define (expt b n)
+  (define (square x)
+    (* x x))
+  (define (expt-iter b n a)
+    (cond ((= n 0) a)
+          ;; a*(b^n) is invariant. b^n = (b^2)^(n/2), so:
+          ;; a * (b ^ n) = a * ((b^2) ^ (n/2)) = (a * (b^2)) * ((b^2) ^ (n/2-1))
+          ((even? n) (expt-iter (square b) (- (/ n 2) 1) (* a (square b))))
+          (else (* b (expt-iter b (- n 1) a)))))
+  (expt-iter b n 1))
