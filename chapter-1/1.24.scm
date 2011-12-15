@@ -4,6 +4,8 @@
 ;;; >  1,000,000,000 :  1,000,000,007;  1,000,000,009;  1,000,000,021;
 ;;; > 10,000,000,000 : 10,000,000,019; 10,000,000,033; 10,000,000,061;
 ;;;
+;;; Yes, the order of growth of (prime?) using (fermat-test) seems to be
+;;; logarithmic.
 
 (define (prime? n)
   (define (square x)
