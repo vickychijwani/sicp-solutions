@@ -8,6 +8,8 @@
   (iterate 0 k))
 
 ;;; continued fraction for e-2
+;;; (n i) = 1.0
+;;; (d i) = 1, 2, 1, 1, 4, 1, 1, 6, 1, 1, 8, ...
 
 (+ 2
  (let ((k 10))
